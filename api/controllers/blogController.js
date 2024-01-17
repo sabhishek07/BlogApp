@@ -205,13 +205,17 @@ export const SearchBlogController=async(req,res)=>{
     try {
 
         const{word}=req.params;
-         
+       
             const searchblog=await BlogModel.find({
                 "$or":[
                     {"title":{$regex:word}},
                     {"description":{$regex:word}}
                 ]
             })
+
+        
+         
+          
 
         
        
